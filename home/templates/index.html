@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}    
+
+{% include 'partials/navbar.html' %}
+   
+    <div class="bemvindo">
+        <h2 class="titulo">BEM VINDO AO</h2>
+        <h3 class="logo teste">CatFinder</h3>
+        <p class="texto1">
+            Ajudamos você a encontrar seu gatinho.
+        </p>
+        <img class="pngcat" src="{% static 'css/img/pngcat.png' %}"> 
+    </div>
+    <div class="wrapper">
+        <button type="button" class="btn btn-outline-dark registro">Registrar Desaparecimento</button>
+    
+
+
+    <h4 class="depoimentos">
+        DEPOIMENTOS DE ALGUNS TUTORES
+    </h4>
+    <section class="cards">
+        <div class="feedback">
+            <img class="user" src="{% static 'css/img/depoimento1.jpg' %}" alt="">
+            <h5>Amanda</h5>
+            <p class="card-text">
+                Graças ao CatFinder consegui encontrar o Alfredo.
+                Estava desesperada e tive muito apoio de toda a comunidade na busca. Foi maravilho tê-lo de volta. Obrigada mais uma vez pessoal. ♥
+            </p>
+        </div>
+        <div class="feedback">
+            <img class="user" src="{% static 'css/img/depoimento1.jpg' %}" alt="">
+            <h5>Amanda</h5>
+            <p class="card-text">
+                Graças ao CatFinder consegui encontrar o Alfredo.
+                Estava desesperada e tive muito apoio de toda a comunidade na busca. Foi maravilho tê-lo de volta. Obrigada mais uma vez pessoal. ♥
+            </p>
+        </div>
+                <div class="feedback">
+            <img class="user" src="{% static 'css/img/depoimento1.jpg' %}" alt="">
+            <h5>Amanda</h5>
+            <p class="card-text">
+                Graças ao CatFinder consegui encontrar o Alfredo.
+                Estava desesperada e tive muito apoio de toda a comunidade na busca. Foi maravilho tê-lo de volta. Obrigada mais uma vez pessoal. ♥
+            </p>
+        </div>
+    </section>   
+{% include 'partials/footer.html' %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% load static %}
+<header>
+    <div class = "navbar navbar-expand-lg navbar-light bg-dark">
+        <h1 class = "logo">CatFinder</h1>
+        <nav class="container-fluid justify-content-start ">
+            <a class="nav-link home" href="{% url 'index' %}">Home</a>
+            <a class="nav-link us" href="{% url 'sobre' %}">Sobre Nós</a>
+            <a class="nav-link mapa" href="#">Mapa</a>
+        </nav>
+        <div class="login-wrapper container-fluid d-inline-flex justify-content-end">
+            <button class = "btn btn-outline-light login m-1" href="#">LOGIN</button>
+            <button class = "btn btn-outline-light login m-1" href="#">SIGN UP</button>    
+        </div>
+    </div>
+</header>
