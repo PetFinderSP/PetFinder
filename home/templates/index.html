@@ -19,29 +19,14 @@
         DEPOIMENTOS DE ALGUNS TUTORES
     </h4>
     <section class="cards">
-        <div class="feedback">
-            <img class="user" src="{% static 'css/img/depoimento1.jpg' %}" alt="">
-            <h5>Amanda</h5>
+        {% for depoimentos in dados_depoimentos %}
+        <div class="feedback">            
+            <img class="user" src="{{ depoimentos.imagem_depoimento.url }}" alt="">
+            <h5>{{ depoimentos.nome_depoimento }}</h5>
             <p class="card-text">
-                Graças ao PetFinder consegui encontrar o Alfredo.
-                Estava desesperada e tive muito apoio de toda a comunidade na busca. Foi maravilho tê-lo de volta. Obrigada mais uma vez pessoal. ♥
+                {{ depoimentos.texto_depoimento }}
             </p>
         </div>
-        <div class="feedback">
-            <img class="user" src="{% static 'css/img/depoimento1.jpg' %}" alt="">
-            <h5>Amanda</h5>
-            <p class="card-text">
-                Graças ao PetFinder consegui encontrar o Alfredo.
-                Estava desesperada e tive muito apoio de toda a comunidade na busca. Foi maravilho tê-lo de volta. Obrigada mais uma vez pessoal. ♥
-            </p>
-        </div>
-                <div class="feedback">
-            <img class="user" src="{% static 'css/img/depoimento1.jpg' %}" alt="">
-            <h5>Amanda</h5>
-            <p class="card-text">
-                Graças ao PetFinder consegui encontrar o Alfredo.
-                Estava desesperada e tive muito apoio de toda a comunidade na busca. Foi maravilho tê-lo de volta. Obrigada mais uma vez pessoal. ♥
-            </p>
-        </div>
+        {% endfor %}
     </section>   
 {% endblock %}
