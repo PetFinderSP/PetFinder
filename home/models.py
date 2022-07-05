@@ -1,5 +1,4 @@
 from django.db import models
-from django.forms import ImageField
 
 class Depoimentos(models.Model):
     imagem_depoimento = models.ImageField()

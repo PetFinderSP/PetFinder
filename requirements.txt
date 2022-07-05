@@ -3,3 +3,4 @@ Django==4.0.4
 sqlparse==0.4.2
 tzdata==2022.1
 pillow==9.1.1
+jupyterlab
