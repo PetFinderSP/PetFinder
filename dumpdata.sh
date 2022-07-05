@@ -1,1 +1,1 @@
-python -Xutf8 manage.py dumpdata > dump.json
+python -Xutf8 manage.py dumpdata --exclude auth.permission --exclude contenttypes > dump.json
