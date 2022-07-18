@@ -1,0 +1,1 @@
+python -Xutf8 manage.py loaddata $1 dump.json
