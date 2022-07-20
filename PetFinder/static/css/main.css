@@ -1,51 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Yanone+Kaffeesatz&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@200&family=Cinzel&family=Krub:wght@200&family=Overlock&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@200&family=Cinzel&family=Krub:wght@200&family=Montserrat:wght@100;300&family=Overlock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans:wght@300&family=Pacifico&display=swap');
 
 
 :root{
---blue:    #0d6efd;
---indigo:  #6610f2;
---purple:  #6f42c1;
---pink:    #ffcee7;
---d-pink:  #fa85c1;
---red:     #dc3545;
---orange:  #fd7e14;
---yellow:  #ffc107;
---green:   #198754;
---teal:    #20c997;
---cyan:    #0dcaf0;
---white:   #ffffff;
---black:   #343a40;
---grey:    #bebebe;   
---greyd:   #878787;
+--rose:        #ffe4e1;
+--white:       #ffffff;
+--guava:       #f47068;
+--blue:        #add8e6;
+--bluedark:    #B0C4DE;
+--black:       #000000;
+
+}
+
+body {
+    background-color: var(--white);
+}
+
+header {
+    background-color: var(--rose);
+}
+
+/* css do navbar */
+
+.nav-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+    padding: 30px 0;
 }
 
 .logo {
-    color: var(--pink) !important;
-    font-family: Pacifico;
-    margin-left: 5px;
+    font-family: 'Pacifico';
+    font-size: 40px;
+    display: inline-flex;
+    justify-content: center;
+    flex: 1;
 }
 
-body{
-    background-color:  var(--pink) !important;
-    background-image: linear-gradient(#ffcee7, #ffffff);
-    font-family: Montserrat !important;
+.one-color {
+    color: var(--blue);
 }
 
-
-
-.nav-link {
-    font-size: large;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--white) !important;
-    
+.two-color {
+    color: var(--white);
 }
 
-.login{
-    color: var(--d-pink) !important;
-    font-weight: bold !important;
+.nav-list {
+    flex: 4;
+    display: inline-flex;
+    justify-content: space-between;
 }
+
+.nav-list li {
+    display: inline;
+}
+
+.nav-list ul {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-list a {
+    font-family: 'Bree Serif';
+    color: var(--guava);
+    font-size: 20px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.login-wrapper {
+    flex: 1;
+    display: inline-flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.login {
+    background-color: var(--blue);
+    font-family: 'Bree Serif';
+    color: var(--rose);
+    width: 100px;
+    font-size: 17px;
+    border-radius: 10px;
+    border: solid transparent;
+    cursor: pointer;
+}
+
+.login:hover {
+    background-color: var(--bluedark);
+}
+
+.cadastro {
+    flex: 1;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cadastro a {
+    font-family: 'Open Sans';
+    color: var(--black);
+    font-size: 13px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.cadastrar {
+    font-family: 'Bree Serif';
+    color: var(--black);
+    font-size: 14px;
+    font-weight: bold;   
+}
+
 
 
 .teste {
@@ -75,12 +144,6 @@ body{
     vertical-align: top;
 }
 
-.depoimentos {
-    font-weight: bold;
-    text-align: center !important;
-    padding-top: 10%;
-    padding-bottom: 5%;
-}
 
 .cards {
     display: grid;
@@ -127,9 +190,6 @@ body{
     font-size: 30px;
     margin: 0px 0px 5px 0px;
     padding: 10px;
-}
-
-footer {
     padding-top: 5%;
     text-align: center;
     font-weight: bolder;
@@ -140,6 +200,7 @@ footer {
     width: 100%;
     flex-direction: column;
 }
+
 
 .footer-list {
     display: inline-flex;

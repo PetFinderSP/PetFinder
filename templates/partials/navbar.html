@@ -1,0 +1,24 @@
+{% load static %}
+<header>
+    <div class="nav-wrapper header-container">
+        <div class="logo">
+            <span class="one-color">pet</span>
+            <span class="two-color">finder</span>
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li><a class="home" href="{% url 'index' %}">Home</a></li>
+                <li><a class="sobre" href="{% url 'sobre' %}">Sobre Nós</a></li>
+                <li><a class="depoimentos" href="#">Depoimentos</a></li>
+                <li><a class="mapa" href="#">Mapa</a></li>
+            </ul>               
+        </div>
+        <div class="login-wrapper">
+            <button class= "login" href="#">LOGIN</button>
+            <div class="cadastro">
+                <a>Não possui cadastro?</a>
+                <a class="cadastrar" href="#">Cadastre-se</a>
+            </div>
+        </div>
+    </div>
+</header>
