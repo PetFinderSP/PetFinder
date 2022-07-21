@@ -2,16 +2,16 @@
 {% load static %}
 {% block content %}    
 
-    <div class="bemvindo">
-        <h2 class="titulo">BEM VINDO AO</h2>
-        <h3 class="">PetFinder</h3>
-        <p class="texto1">
-            Ajudamos você a encontrar seu gatinho.
-        </p>
-        <img class="pngcat" src="{% static 'css/img/pngcat.png' %}"> 
+    <div class="wrapper-main">
+        <div class="back-img">
+            <img class="cachorro" src="{% static 'css/img/dono-cachorro.jpg' %}">
+        </div>
+        <div class="pergunta-afirmacao">
+            <h2>Seu animal de estimação desapareceu?</h2>
+            <h3>AQUI NO PETFINDER AJUDAMOS VOCÊ A ENCONTRAR SEU PET.</h3>
+            <button class= "registrar-desaparecimento" href="#">REGISTRAR DESAPARECIMENTO</button>
+        </div>
     </div>
-    <div class="wrapper">
-        <button type="button" class="btn btn-outline-dark registro">Registrar Desaparecimento</button>
     
 
 
