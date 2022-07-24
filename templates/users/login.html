@@ -10,12 +10,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="contact-form-area">
-                    <form action="{% url 'cadastro' %}" method="POST">
+                    <form action="{% url 'login' %}" method="POST">
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-12 col-lg-12">
-                                <label for="email"><b>Email</b></label>
-                                <input type="email" class="form-control" name="email" placeholder="Ex.: teste@teste.com" required>
+                                <label for="username"><b>Usuário</b></label>
+                                <input type="username" class="form-control" name="username" placeholder="Ex.:SlashCR7" required>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <label for="password"><b>Senha</b></label>

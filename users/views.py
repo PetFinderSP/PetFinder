@@ -1,15 +1,16 @@
 from django.shortcuts import redirect, render
+from django.contrib import auth
 from django.contrib.auth.models import User
 
 
 def cadastro(request):
     if request.method == 'POST':
-        nome = request.POST['nome']
+        username = request.POST['username']
         email = request.POST['email']
         email = email.lower()
         senha = request.POST['password']
         senha2 = request.POST['password2']
-        if not nome.strip():
+        if not username.strip():
             print('O campo do nome não pode ficar em branco')
             return redirect('cadastro')
         if not email.strip():
@@ -18,11 +19,11 @@ def cadastro(request):
         if senha != senha2:
             print('As senhas não são iguais')
             return redirect('cadastro')
-        if User.objects.using('AWS').filter(email=email).exists():
+        if User.objects.filter(email=email).exists():
             print('Usuário já cadastrado')
             return redirect('cadastro')
-        user = User.objects.create_user(username=nome, email=email, password=senha2)
-        user.save(using='AWS')
+        user = User.objects.create_user(username=username, email=email, password=senha2)
+        user.save()
         print('Usuário Criado com Sucesso!')
         return redirect('login')
     else:
@@ -30,16 +31,21 @@ def cadastro(request):
 
 def login(request):
     if request.method == 'POST':
-        email = request.POST['email']
+        username = request.POST['username']
         senha = request.POST['password']
-        if email == "" or senha == "":
+        if username == "" or senha == "":
             print('Os campos email e senha não podem ficar em branco')
             return redirect('login')
-        if User.objects.using('AWS').filter(email=email).exists():
-            nome = User.objects.using('AWS').filter(email=email).values_list('username', flat=True).get()    
-            print(nome)
+        user = auth.authenticate(request, username=username, password=senha)
+        if user is not None:
+            auth.login(request, user)
+            
+            return redirect('dashboard')
+        else:
+            print('Usuário ou senha inválidos')
+            return redirect('login') 
 
-        return redirect('dashboard')
+        
     return render(request, 'users/login.html')
 
 def logout(request):
