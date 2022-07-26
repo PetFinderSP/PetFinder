@@ -8,8 +8,21 @@
             <a class="nav-link mapa" href="#">Mapa</a>
         </nav>
         <div class="login-wrapper container-fluid d-inline-flex justify-content-end">
-            <button class = "btn btn-outline-light login m-1" href="#">LOGIN</button>
-            <button class = "btn btn-outline-light login m-1" href="#">SIGN UP</button>    
+            {% if user.is_authenticated %}
+                <button class = "btn btn-outline-light login m-1" href="{% url 'dashboard' %}">
+                    <a href="{% url 'dashboard' %}"> Meu Perfil</a>
+                </button>
+                <button class = "btn btn-outline-light login m-1" href="{% url 'logout' %}">
+                    <a href="{% url 'logout' %}">LOGOUT</a>
+                </button>
+            {% else %}
+                <button class = "btn btn-outline-light login m-1" href="#">
+                    <a href="{% url 'login' %}">LOGIN</a>
+                </button>
+                <button class = "btn btn-outline-light login m-1" href="#">
+                    <a href="{% url 'cadastro' %}">SIGN UP</a>
+                </button>    
+            {% endif %}
         </div>
     </div>
 </header>

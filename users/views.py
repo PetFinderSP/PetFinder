@@ -22,10 +22,11 @@ def cadastro(request):
         if User.objects.filter(email=email).exists():
             print('Usuário já cadastrado')
             return redirect('cadastro')
-        user = User.objects.create_user(username=username, email=email, password=senha2)
-        user.save()
-        print('Usuário Criado com Sucesso!')
-        return redirect('login')
+        else:
+            user = User.objects.create_user(username=username, email=email, password=senha2)
+            user.save()
+            print('Usuário Criado com Sucesso!')
+            return redirect('login')
     else:
         return render(request, 'users/cadastro.html')
 
@@ -49,7 +50,11 @@ def login(request):
     return render(request, 'users/login.html')
 
 def logout(request):
-    return render(request, 'users/logout.html')
+    auth.logout(request)
+    return redirect('index')
 
 def dashboard(request):
-    return render(request, 'users/dashboard.html')
+    if request.user.is_authenticated:
+        return render(request, 'users/dashboard.html')
+    else:
+        return redirect('index')
