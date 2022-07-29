@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}  
+
+{% include 'partials/messages.html' %}
+<div class="row">
+    <div class="col-12">
+        <div class="contact-form-area">
+            <form action="{% url 'edita_user' %}" method="POST">
+                {% csrf_token %}
+                <input type="text" id="user_id" class="form-control" name="user_id" value="{{ user.id}}" hidden >
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <label for="nome_receita"><b>Usuário</b></label>
+                        <input type="text" class="form-control" name="username" placeholder="Ex.:SlashCR7" value="{{ user.username }}" required>
+                    </div>
+                    <div class="col-12 col-lg-12">
+                        <label for="email"><b>Email</b></label>
+                        <input type="email" class="form-control" name="email" placeholder="Ex.: teste@teste.com" value="{{ user.email }}" required>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <label for="password2"><b>Insira nova senha!</b></label>
+                        <input type="password" class="form-control" name="password2" placeholder="Digite sua nova senha!" required>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <label for="password3"><b>Confirmação de senha</b></label>
+                        <input type="password" class="form-control" name="password3" placeholder="Digite sua nova senha novamente!" required>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button class="btn btn-success" type="submit">Atualizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

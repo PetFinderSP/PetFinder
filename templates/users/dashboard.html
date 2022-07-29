@@ -4,7 +4,16 @@
 
 
 
-<h1>PEFIL Olá {{ user.username }}</h1>
+<h1>PERFIL Olá {{ user.username }}</h1>
+
+<h2> Seu Usuário é: {{ user.username }}</h2>
+<h3> Seu E-mail cadastrado é: {{ user.email }}</h3>
+
+<button class = "btn btn-outline-light login m-1" href="#">
+    <a href="{% url 'edita_user' %}">Atualizar Cadastro</a>
+</button>
+
+
 
 
 {% endblock %}
