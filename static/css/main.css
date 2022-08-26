@@ -114,7 +114,6 @@ body{
     border-top: 0.5px solid var(--grey) !important;
     text-align: center;
     font-weight: bolder;
-    padding: 10px;
     display: inline-flex;
     justify-content: center;
     flex-direction: column;
